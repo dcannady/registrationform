@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="David Cannady">
+    <title>Registration Form</title>
+    <meta name="description" content="This is a Flask project for Coding Dojo">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form action='/process' method='POST'>
+      Email:<input type="text" name="email">
+          <label>email:</label>
+          <input type="text" name="email"/>
+          <label>First Name:</label>
+          <input type="text" name="first_name">
+          <label>Last Name:</label>
+          <input type="text" name="last_name">
+          <label>Password:</label>
+          <input type="text" name="password">
+          <label>Confirm Password:</label>
+          <input type="text" name="confirm_password">
+        <input class="btn" type="submit" value="Submit"/>
+    </form>
+</div>
+</body>
+</html>
